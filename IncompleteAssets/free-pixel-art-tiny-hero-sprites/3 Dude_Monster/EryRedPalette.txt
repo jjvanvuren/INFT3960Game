@@ -1,0 +1,7 @@
+1a0000 - Darkest
+
+800000 - Darker
+
+b30000 - Dark
+
+ff0000 - Light
