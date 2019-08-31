@@ -967,7 +967,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1220922014}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62c003e88f2a15041ba62613134e869e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -983,7 +983,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1220922014}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62c003e88f2a15041ba62613134e869e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1045,7 +1045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1220922021}
-  runSpeed: 40
+  runSpeed: 20
 --- !u!58 &1220922023
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1055,7 +1055,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1220922014}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62c003e88f2a15041ba62613134e869e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
