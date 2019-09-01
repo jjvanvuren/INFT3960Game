@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalMove = 0f;
 
-    public float runSpeed = 20f;
+    public float speed;
 
     bool jump = false;
 
@@ -21,16 +21,16 @@ public class PlayerMovement : MonoBehaviour
         // Check if Run button is held
         if (Input.GetButtonDown("Run"))
         {
-            runSpeed *= 2f;
+            speed *= 2f;
             anim.SetBool("IsRunning", true);
         }
         else if (Input.GetButtonUp("Run"))
         {
-            runSpeed = 20f;
+            speed = 20f;
             anim.SetBool("IsRunning", false);
         }
 
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
 
         anim.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
