@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     bool jump = false;
 
+    public Animator anim;
+
     // Update is called once per frame
     void Update()
     {
@@ -20,17 +22,22 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Run"))
         {
             runSpeed *= 2f;
+            anim.SetBool("IsRunning", true);
         }
         else if (Input.GetButtonUp("Run"))
         {
             runSpeed = 20f;
+            anim.SetBool("IsRunning", false);
         }
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
+        anim.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            anim.SetBool("IsJumping", true);
         }
     }
 
@@ -39,6 +46,11 @@ public class PlayerMovement : MonoBehaviour
         // Move Ery
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
+    }
+
+    public void OnLanding()
+    {
+        anim.SetBool("IsJumping", false);
     }
 
 }
