@@ -21,6 +21,10 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	private bool isColliding = false;
+
+	//References
+	private gameMaster gm;
 
 	[Header("Events")]
 	[Space]
@@ -36,6 +40,7 @@ public class CharacterController2D : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+		gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
@@ -48,6 +53,7 @@ public class CharacterController2D : MonoBehaviour
 	{
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
+		isColliding = false;
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -145,5 +151,20 @@ public class CharacterController2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if(col.CompareTag("WhiteBloodCell"))
+		{
+			if (isColliding)
+			{
+				return;
+			}
+
+			Destroy(col.gameObject);
+			gm.wbcCount += 1;
+			isColliding = true;
+		}
 	}
 }

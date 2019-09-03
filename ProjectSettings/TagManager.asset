@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - WhiteBloodCell
+  - GameMaster
   layers:
   - Default
   - TransparentFX
