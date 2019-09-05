@@ -518,11 +518,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 442875261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72d5c4e0ff7fb8b4b8a52f94ff412a8d, type: 3}
+  m_Script: {fileID: 11500000, guid: fd0e3fcf0c14e644ea541c87a43fbc05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 1387777801}
-  character: {fileID: 1220922017}
+  anim: {fileID: 1220922015}
 --- !u!114 &442875264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6086,6 +6085,12 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1154921656}
   m_CeilingCheck: {fileID: 1070286028}
   m_CrouchDisableCollider: {fileID: 0}
+  CharacterLives: 10
+  knockBackCount: 0
+  knockBackLength: 0.2
+  knockBackFromRight: 0
+  knockBack: 4
+  invulnerabilityCount: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -6340,8 +6345,8 @@ GameObject:
   - component: {fileID: 1627896549}
   - component: {fileID: 1627896547}
   - component: {fileID: 1627896553}
-  - component: {fileID: 1627896546}
   - component: {fileID: 1627896554}
+  - component: {fileID: 1627896546}
   m_Layer: 2
   m_Name: BaccyPlat
   m_TagString: Untagged
@@ -6358,11 +6363,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1627896545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72d5c4e0ff7fb8b4b8a52f94ff412a8d, type: 3}
+  m_Script: {fileID: 11500000, guid: fd0e3fcf0c14e644ea541c87a43fbc05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 1387777801}
-  character: {fileID: 1220922017}
+  anim: {fileID: 1220922015}
 --- !u!50 &1627896547
 Rigidbody2D:
   serializedVersion: 4
