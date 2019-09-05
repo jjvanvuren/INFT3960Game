@@ -6,6 +6,7 @@ TagManager:
   tags:
   - WhiteBloodCell
   - GameMaster
+  - Door
   layers:
   - Default
   - TransparentFX
