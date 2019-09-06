@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Source
+// https://www.youtube.com/watch?v=aRxuKoJH9Y0
+
 public class BaccyPlatPatrol : MonoBehaviour
 {
     public float speed;
-    public float distance;
     public int xMoveDirection;
     public Transform EdgeCheck;
 
@@ -14,7 +16,7 @@ public class BaccyPlatPatrol : MonoBehaviour
     {
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMoveDirection, 0) * speed;
 
-        RaycastHit2D hit = Physics2D.Raycast(EdgeCheck.position, Vector2.down, distance);
+        RaycastHit2D hit = Physics2D.Raycast(EdgeCheck.position, Vector2.down, 0.2f);
         
         if (!hit)
         {
