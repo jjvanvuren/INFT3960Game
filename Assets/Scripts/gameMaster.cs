@@ -7,12 +7,18 @@ using TMPro;
 public class gameMaster : MonoBehaviour
 {
     //Source: https://www.youtube.com/watch?v=P-Ywfxg1_M4&list=PLq3pyCh4J1B2uSvypNOK_nxYKBt5mMCJt&index=23
+
+
     public int wbcCount;
     public TextMeshProUGUI wbcCountText;
+    public TextMeshProUGUI LivesText;
 
     void Update()
     {
+        var player = GameObject.Find("Ery").GetComponent<CharacterController2D>();
+
         wbcCountText.text = ("White Blood Cells: " + wbcCount);
+        LivesText.text = ("Lives: " + player.CharacterLives);
 
     }
 }
