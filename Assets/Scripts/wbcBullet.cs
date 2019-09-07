@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Source
+// https://www.youtube.com/watch?v=wkKsl1Mfp5M
+
 public class wbcBullet : MonoBehaviour
 {
     public float speed = 10f;
@@ -15,10 +18,14 @@ public class wbcBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.tag);
+        // Debug.Log(collision.tag);
 
-        //collision.GetComponent<Enemy>();
+        Enemy enemy = collision.GetComponent<Enemy>();
 
+        if (enemy != null)
+        {
+            enemy.TakeDamage(1);
+        }
         Destroy(gameObject);
     }
 }

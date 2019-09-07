@@ -676,6 +676,7 @@ GameObject:
   - component: {fileID: 442875264}
   - component: {fileID: 442875270}
   - component: {fileID: 442875263}
+  - component: {fileID: 442875269}
   m_Layer: 11
   m_Name: BaccyWalls
   m_TagString: Enemy
@@ -828,6 +829,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &442875269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442875261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892484a70b365eb48b865d6768a9189c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  anim: {fileID: 442875267}
 --- !u!58 &442875270
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6465,6 +6480,7 @@ MonoBehaviour:
   anim: {fileID: 1220922015}
   wbcBulletPrefab: {fileID: 8174732314618441720, guid: 2d9f8f5333e05ec47b08c652e18f784a,
     type: 3}
+  gameMaster: {fileID: 1064623663}
 --- !u!1 &1387777800
 GameObject:
   m_ObjectHideFlags: 0
@@ -6669,6 +6685,7 @@ GameObject:
   - component: {fileID: 1627896553}
   - component: {fileID: 1627896554}
   - component: {fileID: 1627896546}
+  - component: {fileID: 1627896548}
   m_Layer: 11
   m_Name: BaccyPlat
   m_TagString: Enemy
@@ -6710,6 +6727,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1627896548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627896545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892484a70b365eb48b865d6768a9189c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  anim: {fileID: 1627896550}
 --- !u!58 &1627896549
 CircleCollider2D:
   m_ObjectHideFlags: 0

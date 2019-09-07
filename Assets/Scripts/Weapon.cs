@@ -9,12 +9,20 @@ public class Weapon : MonoBehaviour
     public Animator anim;
     public GameObject wbcBulletPrefab;
 
+    public GameObject gameMaster;
+
+    private int wbcCount = 0;
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        var gm = gameMaster.GetComponent<gameMaster>();
+        wbcCount = gm.wbcCount;
+
+        if (Input.GetButtonDown("Fire1") && wbcCount > 0)
         {
             Throw();
+            gm.wbcCount -= 1;
         }
     }
 
