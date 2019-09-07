@@ -6230,6 +6230,7 @@ GameObject:
   - component: {fileID: 1220922018}
   - component: {fileID: 1220922022}
   - component: {fileID: 1220922024}
+  - component: {fileID: 1220922025}
   m_Layer: 10
   m_Name: Ery
   m_TagString: Player
@@ -6406,7 +6407,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1154921656}
   m_CeilingCheck: {fileID: 1070286028}
   m_CrouchDisableCollider: {fileID: 0}
-  CharacterLives: 10
+  CharacterLives: 4
   knockBackCount: 0
   knockBackLength: 0.2
   knockBackFromRight: 0
@@ -6481,6 +6482,22 @@ MonoBehaviour:
   wbcBulletPrefab: {fileID: 8174732314618441720, guid: 2d9f8f5333e05ec47b08c652e18f784a,
     type: 3}
   gameMaster: {fileID: 1064623663}
+--- !u!114 &1220922025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220922014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fcff3bea2b6c284aa4a95e4b4e56fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {fileID: 1387777801}
+  character: {fileID: 1220922017}
+  Ery: {fileID: 1220922014}
+  anim: {fileID: 1220922015}
 --- !u!1 &1387777800
 GameObject:
   m_ObjectHideFlags: 0

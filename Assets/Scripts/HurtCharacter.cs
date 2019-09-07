@@ -8,7 +8,6 @@ using UnityEngine;
 public class HurtCharacter : MonoBehaviour
 {
     public Animator anim;
-    private gameMaster gm;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
