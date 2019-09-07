@@ -192,6 +192,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &74916115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 74916116}
+  m_Layer: 10
+  m_Name: ThrowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &74916116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74916115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.298, y: -0.067, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1220922017}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &76964100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -646,9 +676,9 @@ GameObject:
   - component: {fileID: 442875264}
   - component: {fileID: 442875270}
   - component: {fileID: 442875263}
-  m_Layer: 2
+  m_Layer: 11
   m_Name: BaccyWalls
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5350,7 +5380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 701660190}
-  m_Layer: 2
+  m_Layer: 11
   m_Name: EdgeCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6184,6 +6214,7 @@ GameObject:
   - component: {fileID: 1220922019}
   - component: {fileID: 1220922018}
   - component: {fileID: 1220922022}
+  - component: {fileID: 1220922024}
   m_Layer: 10
   m_Name: Ery
   m_TagString: Player
@@ -6271,6 +6302,7 @@ Transform:
   m_Children:
   - {fileID: 1070286028}
   - {fileID: 1154921656}
+  - {fileID: 74916116}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6417,6 +6449,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.08}
   serializedVersion: 2
   m_Radius: 0.2088592
+--- !u!114 &1220922024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220922014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae75c8220c3d4b94dbd12170b34a4d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwPoint: {fileID: 74916116}
+  anim: {fileID: 1220922015}
+  wbcBulletPrefab: {fileID: 8174732314618441720, guid: 2d9f8f5333e05ec47b08c652e18f784a,
+    type: 3}
 --- !u!1 &1387777800
 GameObject:
   m_ObjectHideFlags: 0
@@ -6621,9 +6669,9 @@ GameObject:
   - component: {fileID: 1627896553}
   - component: {fileID: 1627896554}
   - component: {fileID: 1627896546}
-  m_Layer: 2
+  m_Layer: 11
   m_Name: BaccyPlat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6789,7 +6837,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  distance: 0.2
   xMoveDirection: 1
   EdgeCheck: {fileID: 701660190}
 --- !u!1 &1640398319

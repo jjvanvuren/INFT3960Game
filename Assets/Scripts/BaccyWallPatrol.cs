@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Source
-// https://www.youtube.com/watch?v=aRxuKoJH9Y0
-
 // https://www.youtube.com/watch?v=-mrGHaAdX8M
 
 public class BaccyWallPatrol : MonoBehaviour
@@ -14,9 +12,14 @@ public class BaccyWallPatrol : MonoBehaviour
 
     private void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(xMoveDirection, 0));
+
+        // Only register a "hit" on the foreground layer
+        LayerMask myLayerMask = 1 << 9;
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(xMoveDirection, 0), Mathf.Infinity, myLayerMask);
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMoveDirection, 0) * speed;
 
+        // Turn around when "wall" is reached
         if (hit.distance < 0.7f)
         {
             FlipX();
