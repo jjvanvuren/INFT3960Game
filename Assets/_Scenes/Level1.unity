@@ -6496,6 +6496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 1387777801}
   character: {fileID: 1220922017}
+  Ery: {fileID: 1220922014}
   anim: {fileID: 1220922015}
 --- !u!1 &1387777800
 GameObject:

@@ -8,6 +8,8 @@ public class EryDeath : MonoBehaviour
 {
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private Transform character;
+    public GameObject Ery;
+
     public Animator anim;
 
     private void Update()
@@ -16,8 +18,14 @@ public class EryDeath : MonoBehaviour
         int iLives = player.CharacterLives;
         if (iLives < 1)
         {
+            player.CharacterLives = 4;
             anim.SetTrigger("Dead");
-            character.transform.position = respawnPoint.transform.position;
+            Invoke("Die", 2f);
         }
+    }
+
+    void Die()
+    {
+        character.transform.position = respawnPoint.transform.position;
     }
 }
