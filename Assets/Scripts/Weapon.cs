@@ -28,6 +28,7 @@ public class Weapon : MonoBehaviour
 
     void Throw()
     {
+        SoundManagerScript.PlaySound("ThrowWBC");
         anim.SetTrigger("Throw");
         Instantiate(wbcBulletPrefab, throwPoint.position, throwPoint.rotation);
     }

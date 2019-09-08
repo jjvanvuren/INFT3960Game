@@ -189,7 +189,8 @@ public class CharacterController2D : MonoBehaviour
 				return;
 			}
 
-			Destroy(col.gameObject);
+            SoundManagerScript.PlaySound("PickUpWBC");
+            Destroy(col.gameObject);
 			gm.wbcCount += 1;
 			isColliding = true;
 		}

@@ -23,6 +23,7 @@ public class EryDeath : MonoBehaviour
             
             player.CharacterLives = 4;
             GameObject.Find("Ery").GetComponent<PlayerMovement>().enabled = false;
+            SoundManagerScript.PlaySound("Death");
             anim.SetTrigger("Dead");
             Invoke("GameOver", 1.5f);
 

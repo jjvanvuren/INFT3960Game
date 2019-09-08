@@ -10,9 +10,13 @@ public class RespawnCharacter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        SoundManagerScript.PlaySound("EryHurt");
+
         // When the player character collides with DeathFloor, respawn and lose a life
 
         var player = collision.GetComponent<CharacterController2D>();
+
+
 
         if (player.invulnerabilityCount <= 0)
         {

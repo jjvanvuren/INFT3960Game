@@ -18,6 +18,7 @@ public class HurtCharacter : MonoBehaviour
             // Check if character is vulnerable
             if (player.invulnerabilityCount <= 0)
             {
+                SoundManagerScript.PlaySound("EryHurt");
                 anim.SetTrigger("Hurt");
                 player.knockBackCount = player.knockBackLength;
                 player.CharacterLives -= 1;
