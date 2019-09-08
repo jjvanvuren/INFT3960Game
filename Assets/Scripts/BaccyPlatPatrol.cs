@@ -37,4 +37,14 @@ public class BaccyPlatPatrol : MonoBehaviour
             xMoveDirection = 1;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Prevent collision with the player
+
+        if (collision.gameObject.tag == "Player")
+        {
+            Physics2D.IgnoreCollision(collision.collider, gameObject.GetComponent<CircleCollider2D>());
+        }
+    }
 }

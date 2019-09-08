@@ -10,7 +10,15 @@ public class RespawnCharacter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        character.transform.position = respawnPoint.transform.position;
-    }
+        // When the player character collides with DeathFloor, respawn and lose a life
 
+        var player = collision.GetComponent<CharacterController2D>();
+
+        if (player.invulnerabilityCount <= 0)
+        {
+            player.CharacterLives -= 1;
+            player.invulnerabilityCount = 1f;
+            character.transform.position = respawnPoint.transform.position;
+        }
+    }
 }

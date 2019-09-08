@@ -1264,6 +1264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  enemyCol: {fileID: 442875270}
   anim: {fileID: 442875267}
 --- !u!58 &442875270
 CircleCollider2D:
@@ -7187,6 +7188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  enemyCol: {fileID: 1151559222}
   anim: {fileID: 1151559226}
 --- !u!114 &1151559221
 MonoBehaviour:
@@ -8082,6 +8084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  enemyCol: {fileID: 1627896553}
   anim: {fileID: 1627896550}
 --- !u!58 &1627896549
 CircleCollider2D:
