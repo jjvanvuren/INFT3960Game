@@ -18,14 +18,18 @@ public class EryDeath : MonoBehaviour
         int iLives = player.CharacterLives;
         if (iLives < 1)
         {
+            
             player.CharacterLives = 4;
+            GameObject.Find("Ery").GetComponent<PlayerMovement>().enabled = false;
             anim.SetTrigger("Dead");
             Invoke("Die", 2f);
+            
         }
     }
 
     void Die()
     {
         character.transform.position = respawnPoint.transform.position;
+        GameObject.Find("Ery").GetComponent<PlayerMovement>().enabled = true;
     }
 }

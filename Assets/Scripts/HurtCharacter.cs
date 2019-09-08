@@ -23,8 +23,14 @@ public class HurtCharacter : MonoBehaviour
                 player.CharacterLives -= 1;
                 player.invulnerabilityCount = 1f;
             }
+            else if (player.CharacterLives < 1) // Only knockback if character is alive
+            {
+                player.knockBackCount = 0;
+                player.CharacterLives -= 1;
+                player.invulnerabilityCount = 1f;
+            }
 
-            if(collision.transform.position.x < transform.position.x)
+            if (collision.transform.position.x < transform.position.x)
             {
                 player.knockBackFromRight = true;
             }
