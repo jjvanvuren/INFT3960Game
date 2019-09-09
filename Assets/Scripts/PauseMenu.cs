@@ -21,9 +21,7 @@ public class PauseMenu : MonoBehaviour
 
         if(Input.GetButtonDown("Pause"))
         {
-
             paused = !paused;
-
         }
 
         if (paused)
@@ -31,6 +29,10 @@ public class PauseMenu : MonoBehaviour
 
             PauseUI.SetActive(true);
             Time.timeScale = 0;
+
+            // Enable the mouse
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
         }
 
@@ -40,6 +42,9 @@ public class PauseMenu : MonoBehaviour
             PauseUI.SetActive(false);
             Time.timeScale = 1;
 
+            // Hide and lock the mouse
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 

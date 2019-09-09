@@ -13,6 +13,13 @@ public class gameMaster : MonoBehaviour
     public TextMeshProUGUI wbcCountText;
     public TextMeshProUGUI LivesText;
 
+    private void Start()
+    {
+        // Hide and lock the mouse
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     void Update()
     {
         var player = GameObject.Find("Ery").GetComponent<CharacterController2D>();

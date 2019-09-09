@@ -4,6 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class EndScreenMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        // Enable the mouse
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     //Return to TitleScreen
     public void TitleScreen()
     {

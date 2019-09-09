@@ -22,6 +22,10 @@ public class GameOverMenuScript : MonoBehaviour
             GameOverUI.SetActive(true);
             Time.timeScale = 0;
 
+            // Enable the mouse
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
         }
 
         if (!isGameOver)
