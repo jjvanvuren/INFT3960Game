@@ -17,7 +17,6 @@ public class Door : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            SoundManagerScript.PlaySound("LevelChange");
             SceneManager.LoadScene(LevelToLoad);
         }
     }
