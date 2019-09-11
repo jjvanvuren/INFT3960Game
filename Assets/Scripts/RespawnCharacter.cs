@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Source
+// https://www.youtube.com/watch?v=nBgCeJBMT0k
+
 public class RespawnCharacter : MonoBehaviour
 {
     [SerializeField] private Transform respawnPoint;

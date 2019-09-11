@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Source
+// https://www.youtube.com/watch?v=dwcT-Dch0bA
+
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
