@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // Move Ery
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
         jump = false;
     }
 

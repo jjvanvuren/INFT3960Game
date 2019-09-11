@@ -7,7 +7,8 @@ public class PauseMenu : MonoBehaviour
 {
     // Source: https://www.youtube.com/watch?v=xIevsYimJYc & https://www.youtube.com/watch?v=TatAnGj1RMg
     public GameObject PauseUI;
-    private bool paused = false;
+
+    public bool paused = false;
 
     private void Start()
     {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class GameOverMenuScript : MonoBehaviour
 {
     public GameObject GameOverUI;
@@ -16,7 +17,9 @@ public class GameOverMenuScript : MonoBehaviour
 
     private void Update()
     {
-        if (isGameOver)
+        var pauseMenu = GameObject.Find("Main Camera").GetComponent<PauseMenu>();
+
+        if (isGameOver && !pauseMenu.paused)
         {
 
             GameOverUI.SetActive(true);
@@ -28,7 +31,7 @@ public class GameOverMenuScript : MonoBehaviour
 
         }
 
-        if (!isGameOver)
+        if (!isGameOver && !pauseMenu.paused)
         {
 
             GameOverUI.SetActive(false);
