@@ -10,8 +10,10 @@ public class gameMaster : MonoBehaviour
 
 
     public int wbcCount;
+    public int plateletCount;
     public TextMeshProUGUI wbcCountText;
     public TextMeshProUGUI LivesText;
+    public TextMeshProUGUI PlateletCountText;
 
     private void Start()
     {
@@ -26,6 +28,7 @@ public class gameMaster : MonoBehaviour
 
         wbcCountText.text = ("White Blood Cells: " + wbcCount);
         LivesText.text = ("Lives: " + player.CharacterLives);
+        PlateletCountText.text = ("Platelets: " + plateletCount);
 
     }
 }

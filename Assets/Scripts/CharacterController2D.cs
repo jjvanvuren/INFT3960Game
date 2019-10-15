@@ -145,5 +145,17 @@ public class CharacterController2D : MonoBehaviour
 			gm.wbcCount += 3;
 			isColliding = true;
 		}
-	}
+        if (col.CompareTag("Platelet"))
+        {
+            if (isColliding)
+            {
+                return;
+            }
+
+            SoundManagerScript.PlaySound("PickUpWBC");
+            Destroy(col.gameObject);
+            gm.plateletCount += 1;
+            isColliding = true;
+        }
+    }
 }
