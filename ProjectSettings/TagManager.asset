@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Enemy
   - Platelet
+  - Projectile
   layers:
   - Default
   - TransparentFX

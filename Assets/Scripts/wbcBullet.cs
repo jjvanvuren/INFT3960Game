@@ -26,6 +26,10 @@ public class wbcBullet : MonoBehaviour
         {
             enemy.TakeDamage(1);
         }
-        Destroy(gameObject);
+
+        if (collision.tag != "Projectile")
+        {
+            Destroy(gameObject);
+        }
     }
 }
