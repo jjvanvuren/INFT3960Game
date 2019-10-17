@@ -2,19 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Source
-// https://www.youtube.com/watch?v=sdGeGQPPW7E
-
-public class HurtCharacter : MonoBehaviour
+public class BaccySpit : MonoBehaviour
 {
+    public float speed = 10f;
+    public Rigidbody2D rb;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        GameObject player = GameObject.Find("Ery");
+        Vector2 direction = player.transform.position - transform.position;
+        direction.Normalize();
+
+        rb.velocity = direction * speed;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "Ery")
+        Debug.Log(collision.name);
+
+        if (collision.name == "Ery")
         {
             var player = collision.GetComponent<CharacterController2D>();
 
-            // Check if character is vulnerable
             if (player.invulnerabilityCount <= 0)
             {
                 SoundManagerScript.PlaySound("EryHurt");
@@ -40,5 +50,7 @@ public class HurtCharacter : MonoBehaviour
                 player.knockBackFromRight = false;
             }
         }
+
+        Destroy(gameObject);
     }
 }
