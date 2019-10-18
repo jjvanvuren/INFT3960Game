@@ -15,19 +15,26 @@ public class EryDeath : MonoBehaviour
 
     private void Update()
     {
-        var player = GameObject.Find("Ery").GetComponent<CharacterController2D>();
-        
-        int iLives = player.CharacterLives;
+        GameObject player = GameObject.Find("Ery");
+
+        var playerController = player.GetComponent<CharacterController2D>();
+        var playerBody = player.GetComponent<Rigidbody2D>();
+
+        int iLives = playerController.CharacterLives;
         if (iLives < 1)
         {
-            
-            player.CharacterLives = 4;
-            GameObject.Find("Ery").GetComponent<PlayerMovement>().enabled = false;
+            // Stop player momentum for death animation
+            playerBody.velocity = Vector2.zero;
+            playerBody.angularVelocity = 0f;
+            playerBody.gravityScale = 0f;
+            player.GetComponent<PlayerMovement>().enabled = false;
+
+            // PLay death animation & sound
             SoundManagerScript.PlaySound("Death");
             anim.SetTrigger("Dead");
-            Invoke("GameOver", 1.5f);
 
-            
+            playerController.CharacterLives = 4;
+            Invoke("GameOver", 1.5f);
         }
     }
 

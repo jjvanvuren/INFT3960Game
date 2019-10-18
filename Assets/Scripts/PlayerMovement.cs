@@ -17,12 +17,16 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator anim;
 
+    private bool isGrounded;
+
+    
+
     // Update is called once per frame
     void Update()
     {
-
+        
         // Check if Run button is held
-        if (Input.GetButtonDown("Run"))
+        if (Input.GetButtonDown("Run") && isGrounded)
         {
             speed *= 2f;
             anim.SetBool("IsRunning", true);
@@ -37,17 +41,26 @@ public class PlayerMovement : MonoBehaviour
 
         anim.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
+        anim.SetBool("IsGrounded", isGrounded);
+
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
             anim.SetBool("IsJumping", true);
         }
+
+        
     }
 
     private void FixedUpdate()
     {
+        isGrounded = controller.m_Grounded;
+
         // Move Ery
         controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
+
+        
+
         jump = false;
     }
 

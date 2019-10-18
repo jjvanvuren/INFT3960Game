@@ -13,19 +13,33 @@ public class RespawnCharacter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SoundManagerScript.PlaySound("EryHurt");
-
         // When the player character collides with DeathFloor, respawn and lose a life
+        CharacterController2D playerController = collision.GetComponent<CharacterController2D>();
+        Rigidbody2D playerBody = collision.GetComponent<Rigidbody2D>();
 
-        var player = collision.GetComponent<CharacterController2D>();
-
-
-
-        if (player.invulnerabilityCount <= 0)
+        if (playerController.invulnerabilityCount <= 0)
         {
-            player.CharacterLives -= 1;
-            player.invulnerabilityCount = 1f;
-            character.transform.position = respawnPoint.transform.position;
+            SoundManagerScript.PlaySound("EryHurt");
+            playerController.CharacterLives -= 1;
+            playerController.invulnerabilityCount = 1f;
+
+            if (playerController.CharacterLives > 0) // Only respawn if game is not over
+            {
+                StartCoroutine(Respawn(playerBody));
+            }
         }
+    }
+
+    IEnumerator Respawn(Rigidbody2D playerBody)
+    {
+        // Used to add a small delay before respawn
+
+        yield return new WaitForSeconds(2);
+
+        // Stop player momentum from fall
+        playerBody.velocity = Vector2.zero;
+        playerBody.angularVelocity = 0f;
+
+        character.transform.position = respawnPoint.transform.position;
     }
 }

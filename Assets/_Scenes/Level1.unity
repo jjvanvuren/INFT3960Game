@@ -7768,7 +7768,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 823
+    m_Bits: 513
   m_GroundCheck: {fileID: 1154921656}
   m_CeilingCheck: {fileID: 1070286028}
   CharacterLives: 4
@@ -7776,6 +7776,7 @@ MonoBehaviour:
   knockBackLength: 0.2
   knockBackFromRight: 0
   knockBack: 4
+  m_Grounded: 0
   invulnerabilityCount: 0
   OnLandEvent:
     m_PersistentCalls:
@@ -8039,7 +8040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387777800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.53, y: -3.04, z: 0}
+  m_LocalPosition: {x: -10.53, y: -2.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
