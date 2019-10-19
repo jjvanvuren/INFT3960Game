@@ -45,28 +45,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            anim.SetBool("IsGrounded", false);
             jump = true;
-            anim.SetBool("IsJumping", true);
         }
-
-        
     }
 
     private void FixedUpdate()
     {
+        // Check if Ery is grounded
         isGrounded = controller.m_Grounded;
 
         // Move Ery
         controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
 
-        
-
         jump = false;
     }
-
-    public void OnLanding()
-    {
-        anim.SetBool("IsJumping", false);
-    }
-
 }
