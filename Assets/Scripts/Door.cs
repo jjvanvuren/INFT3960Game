@@ -5,20 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
-
     public int LevelToLoad;
+    public bool levelHasPlatelets;
+    public int plateletsNeeded;
+
+    private gameMaster gm;
 
     void Start()
     {
-
+        gm = GameObject.Find("GameMaster").GetComponent<gameMaster>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player"))
+        if (levelHasPlatelets == true)
         {
-            SceneManager.LoadScene(LevelToLoad);
+            
+            if (col.CompareTag("Player") && (gm.plateletCount >= plateletsNeeded))
+            {
+                SceneManager.LoadScene(LevelToLoad);
+            }
+        } else
+        {
+            if (col.CompareTag("Player"))
+            {
+                SceneManager.LoadScene(LevelToLoad);
+            }
         }
+
     }
 
 }
