@@ -19,8 +19,6 @@ public class BaccySpit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
-
         if (collision.name == "Ery")
         {
             var player = collision.GetComponent<CharacterController2D>();

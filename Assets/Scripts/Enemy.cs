@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] int health = 1;
     [SerializeField] CircleCollider2D enemyCol;
+    [SerializeField] string enemyType;
 
     public Animator anim;
 
@@ -20,10 +21,20 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0) // If enemy health is depleted, enemy dies
         {
+
+            if (enemyType == "Patrol")
+            {
+                // Prevent damage to player
+                BaccyPatrol bp = gameObject.GetComponent<BaccyPatrol>();
+                bp.speed = 0f;
+            }
+
+            enemyCol.enabled = false;
+
+            // Invoke Death
             SoundManagerScript.PlaySound("Death");
-            enemyCol.enabled = false; // Prevent damage to player
             anim.SetTrigger("Death");
-            Invoke("Die", 0.4f);
+            Invoke("Die", 0.6f);
         }
     }
     

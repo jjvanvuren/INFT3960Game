@@ -7,6 +7,7 @@ public class GameOverMenuScript : MonoBehaviour
 {
     public GameObject GameOverUI;
     public bool isGameOver = false;
+    PauseMenu pauseMenu;
 
     private void Start()
     {
@@ -17,10 +18,14 @@ public class GameOverMenuScript : MonoBehaviour
 
     private void Update()
     {
-        var pauseMenu = GameObject.Find("Main Camera").GetComponent<PauseMenu>();
+        
 
-        if (isGameOver && !pauseMenu.paused)
+        if (isGameOver)
         {
+            pauseMenu = GameObject.Find("Main Camera").GetComponent<PauseMenu>();
+
+            // Prevent player from triggering pause menu
+            Destroy(pauseMenu);
 
             GameOverUI.SetActive(true);
             Time.timeScale = 0;
@@ -31,7 +36,7 @@ public class GameOverMenuScript : MonoBehaviour
 
         }
 
-        if (!isGameOver && !pauseMenu.paused)
+        if (!isGameOver)
         {
 
             GameOverUI.SetActive(false);

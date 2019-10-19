@@ -34,14 +34,16 @@ public class EryDeath : MonoBehaviour
             anim.SetTrigger("Dead");
 
             playerController.CharacterLives = 4;
-            Invoke("GameOver", 1.5f);
+            Invoke("GameOver", 0.9f);
         }
     }
 
     void GameOver()
     {
-        // Show game over menu
+        // Dont show Ery on game over
+        Ery.GetComponent<Renderer>().enabled = false;
 
+        // Show game over menu
         var gameOver = GameObject.Find("Main Camera").GetComponent<GameOverMenuScript>();
         gameOver.isGameOver = true;
     }
