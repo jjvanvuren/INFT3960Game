@@ -28,7 +28,7 @@ public class gameMaster : MonoBehaviour
 
         wbcCountText.text = ("White Blood Cells: " + wbcCount);
         LivesText.text = ("Lives: " + player.CharacterLives);
-        PlateletCountText.text = ("Platelets: " + plateletCount);
+        PlateletCountText.text = ("Platelets: " + plateletCount + "/10");
 
     }
 }

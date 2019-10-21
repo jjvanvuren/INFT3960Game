@@ -55,7 +55,7 @@ public class GameOverMenuScript : MonoBehaviour
     public void TitleScreen()
     {
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
 
     }
 
