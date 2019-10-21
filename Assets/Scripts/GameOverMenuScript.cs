@@ -36,7 +36,7 @@ public class GameOverMenuScript : MonoBehaviour
 
         }
 
-        if (!isGameOver)
+        if (!isGameOver && !pauseMenu.paused)
         {
 
             GameOverUI.SetActive(false);

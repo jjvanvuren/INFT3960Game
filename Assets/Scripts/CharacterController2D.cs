@@ -68,6 +68,9 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 
+        // Deal with slopes
+        NormalizeSlope();
+
         invulnerabilityCount -= Time.deltaTime;
     }
 
@@ -77,9 +80,8 @@ public class CharacterController2D : MonoBehaviour
 		//only control the player if grounded or airControl is turned on
 		if ((m_Grounded || m_AirControl) && knockBackCount <= 0)
 		{
-
-			// Move the character by finding the target velocity
-			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+            // Move the character by finding the target velocity
+            Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
@@ -156,6 +158,29 @@ public class CharacterController2D : MonoBehaviour
             Destroy(col.gameObject);
             gm.plateletCount += 1;
             isColliding = true;
+        }
+    }
+
+    void NormalizeSlope()
+    {
+        // Improves movement on slopes.
+        // Source: https://www.youtube.com/watch?v=xMhgxUFKakQ
+
+        // Attempt vertical normalization
+        if (m_Grounded)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 2f, m_WhatIsGround);
+
+            if (hit.collider != null && Mathf.Abs(hit.normal.x) > 0.1f)
+            {
+                // Apply the opposite force against the slope force
+                m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x - (hit.normal.x * 0.25f), m_Rigidbody2D.velocity.y);
+
+                //Move Player up or down to compensate for the slope below them
+                Vector3 pos = transform.position;
+                pos.y += -hit.normal.x * Mathf.Abs(m_Rigidbody2D.velocity.x) * Time.deltaTime * (m_Rigidbody2D.velocity.x - hit.normal.x > 0 ? 1 : -1);
+                transform.position = pos;
+            }
         }
     }
 }
