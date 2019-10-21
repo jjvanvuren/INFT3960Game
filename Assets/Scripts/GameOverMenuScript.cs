@@ -18,12 +18,10 @@ public class GameOverMenuScript : MonoBehaviour
 
     private void Update()
     {
-        
+        pauseMenu = GameObject.Find("Main Camera").GetComponent<PauseMenu>();
 
         if (isGameOver)
         {
-            pauseMenu = GameObject.Find("Main Camera").GetComponent<PauseMenu>();
-
             // Prevent player from triggering pause menu
             Destroy(pauseMenu);
 

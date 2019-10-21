@@ -11,7 +11,6 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
-	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 
     public int CharacterLives = 3;
 
@@ -22,7 +21,6 @@ public class CharacterController2D : MonoBehaviour
 
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	public bool m_Grounded;            // Whether or not the player is grounded.
-	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
@@ -169,12 +167,12 @@ public class CharacterController2D : MonoBehaviour
         // Attempt vertical normalization
         if (m_Grounded)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 2f, m_WhatIsGround);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1f, m_WhatIsGround);
 
             if (hit.collider != null && Mathf.Abs(hit.normal.x) > 0.1f)
             {
                 // Apply the opposite force against the slope force
-                m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x - (hit.normal.x * 0.25f), m_Rigidbody2D.velocity.y);
+                m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x - (hit.normal.x * 0.25f), m_Rigidbody2D.velocity.y / 2);
 
                 //Move Player up or down to compensate for the slope below them
                 Vector3 pos = transform.position;
