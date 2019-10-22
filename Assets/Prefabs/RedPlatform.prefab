@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -6633762960353051583}
   - component: {fileID: -2952423507539792987}
   - component: {fileID: -3556920050353054735}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RedPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,3 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2942df06a3299845b760bc1f8749ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0}
+  minPositionY: 0
+  maxPositionY: 0
+  changeDirection: 0

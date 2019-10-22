@@ -49,7 +49,7 @@ public class BaccySpit : MonoBehaviour
             }
         }
 
-        if (collision.tag != "Projectile")
+        if (collision.tag != "Projectile" && collision.tag != "Enemy")
         {
             Destroy(gameObject);
         }

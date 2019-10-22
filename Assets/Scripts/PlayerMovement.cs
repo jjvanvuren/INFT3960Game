@@ -8,23 +8,19 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
-
     float horizontalMove = 0f;
-
     public float speed;
-
     bool jump = false;
-
     public Animator anim;
-
     private bool isGrounded;
-
-    
+    public Material originalMat;
 
     // Update is called once per frame
     void Update()
     {
+
         
+
         // Check if Run button is held
         if (Input.GetButtonDown("Run") && isGrounded)
         {
@@ -47,6 +43,18 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("IsGrounded", false);
             jump = true;
+        }
+
+        // Add transparency when player is invulnerable
+        if (GetComponent<CharacterController2D>().invulnerabilityCount > 0 && GetComponent<CharacterController2D>().CharacterLives > 0)
+        {
+            //GetComponent<SpriteRenderer>().material = invulnerableMat;
+            GetComponent<SpriteRenderer>().material.color = new Color32(255, 255, 255, 150);
+
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().material = originalMat;
         }
     }
 

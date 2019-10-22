@@ -35,7 +35,6 @@ public class BaccyShootAI : MonoBehaviour
         {
             FlipX();
             Spit();
-            
         }
     }
 
@@ -51,6 +50,7 @@ public class BaccyShootAI : MonoBehaviour
             direction = player.transform.position - transform.position;
             direction.Normalize();
 
+            SoundManagerScript.PlaySound("ThrowWBC");
             Instantiate(spit, spitPoint.transform.position, spitPoint.transform.rotation);
 
             spitTimer = 0;
