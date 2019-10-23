@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    //Source for player collision: https://www.youtube.com/watch?v=O6wlIqe2lTA
+    //Source for player collision and initial movement: https://www.youtube.com/watch?v=O6wlIqe2lTA
 
     public Vector3 velocity;
     public int minPositionY;
@@ -34,7 +34,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (movesHorizontal)
         {
-            // Move the platform up or down
+            // Move the platform left or right
             if (transform.position.x <= maxPositionX && !changeDirection)
             {
 
