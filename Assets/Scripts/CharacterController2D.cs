@@ -133,7 +133,7 @@ public class CharacterController2D : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if(col.CompareTag("WhiteBloodCell"))
+		if (col.CompareTag("WhiteBloodCell"))
 		{
 			if (isColliding)
 			{
@@ -156,6 +156,18 @@ public class CharacterController2D : MonoBehaviour
             Destroy(col.gameObject);
             gm.plateletCount += 1;
             isColliding = true;
+        }
+
+        if (col.CompareTag("OxygenInfusion"))
+        {
+            if (isColliding)
+            {
+                return;
+            }
+
+            SoundManagerScript.PlaySound("PickUpWBC");
+            Destroy(col.gameObject);
+            gm.countDown += 1f;
         }
     }
 
