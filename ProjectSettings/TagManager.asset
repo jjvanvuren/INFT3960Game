@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Platelet
   - Projectile
+  - OxygenInfusion
   layers:
   - Default
   - TransparentFX

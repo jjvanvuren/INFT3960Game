@@ -9,7 +9,10 @@ public class MovingPlatform : MonoBehaviour
     public Vector3 velocity;
     public int minPositionY;
     public int maxPositionY;
+    public int minPositionX;
+    public int maxPositionX;
     public bool changeDirection;
+    public bool movesHorizontal;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -29,30 +32,63 @@ public class MovingPlatform : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Move the platform up or down
-        if (transform.position.y <= maxPositionY && !changeDirection)
+        if (movesHorizontal)
         {
+            // Move the platform up or down
+            if (transform.position.x <= maxPositionX && !changeDirection)
+            {
 
-            transform.position += velocity * Time.deltaTime;
+                transform.position += velocity * Time.deltaTime;
+            }
+
+            else if (transform.position.x >= minPositionX && changeDirection)
+            {
+
+                transform.position -= velocity * Time.deltaTime;
+            }
+
+
+            // Change direction when reaching max or min position
+            if (transform.position.x > maxPositionX)
+            {
+                changeDirection = true;
+            }
+
+            else if (transform.position.x < minPositionX)
+            {
+                changeDirection = false;
+            }
+        }
+        else
+        {
+            // Move the platform up or down
+            if (transform.position.y <= maxPositionY && !changeDirection)
+            {
+
+                transform.position += velocity * Time.deltaTime;
+            }
+
+            else if (transform.position.y >= minPositionY && changeDirection)
+            {
+
+                transform.position -= velocity * Time.deltaTime;
+            }
+
+
+            // Change direction when reaching max or min position
+            if (transform.position.y > maxPositionY)
+            {
+                changeDirection = true;
+            }
+
+            else if (transform.position.y < minPositionY)
+            {
+                changeDirection = false;
+            }
         }
 
-        else if (transform.position.y >= minPositionY && changeDirection)
-        {
-
-            transform.position -= velocity * Time.deltaTime;
-        }
 
 
-        // Change direction when reaching max or min position
-        if (transform.position.y > maxPositionY)
-        {
-            changeDirection = true;
-        }
-
-        else if (transform.position.y < minPositionY)
-        {
-            changeDirection = false;
-        }
 
 
     }
