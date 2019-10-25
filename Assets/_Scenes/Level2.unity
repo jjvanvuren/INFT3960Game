@@ -4854,7 +4854,8 @@ AudioSource:
   m_GameObject: {fileID: 464853501}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 617b2724dff940242b7e66be9c4a6894,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.25
@@ -4989,6 +4990,7 @@ MonoBehaviour:
   wbcCountText: {fileID: 1665683173}
   LivesText: {fileID: 389162738}
   PlateletCountText: {fileID: 1672220652}
+  countDown: 31
 --- !u!4 &491016445
 Transform:
   m_ObjectHideFlags: 0
