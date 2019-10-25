@@ -183,7 +183,6 @@ public class CharacterController2D : MonoBehaviour
             GameObject.Find("Score").GetComponent<ScoreTracker>().totalScore += 1;
             gm.levelScore += 1;
 
-            Debug.Log(GameObject.Find("Score").GetComponent<ScoreTracker>().totalScore);
             isColliding = true;
         }
     }

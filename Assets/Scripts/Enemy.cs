@@ -10,6 +10,16 @@ public class Enemy : MonoBehaviour
 
     public Animator anim;
 
+    //References
+    private gameMaster gm;
+
+    private bool isColliding = false;
+
+    private void Awake()
+    {
+        gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
+    }
+
     public void TakeDamage (int damage)
     {
         if (health > 0)
@@ -40,7 +50,17 @@ public class Enemy : MonoBehaviour
     
     void Die()
     {
+        if (isColliding)
+        {
+            return;
+        }
+
+        // Add points to player score
+        GameObject.Find("Score").GetComponent<ScoreTracker>().totalScore += 10;
+        gm.levelScore += 10;
         // Destroy the enemy game object
         Destroy(gameObject);
+
+        isColliding = true;
     }
 }
