@@ -11,6 +11,7 @@ TagManager:
   - Platelet
   - Projectile
   - OxygenInfusion
+  - ScorePickup
   layers:
   - Default
   - TransparentFX

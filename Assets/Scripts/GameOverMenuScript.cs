@@ -46,6 +46,12 @@ public class GameOverMenuScript : MonoBehaviour
     public void Restart()
     {
 
+        int totalScore = GameObject.Find("Score").GetComponent<ScoreTracker>().totalScore;
+        int lvlScore = GameObject.Find("GameMaster").GetComponent<gameMaster>().levelScore;
+
+        totalScore -= lvlScore;
+
+        GameObject.Find("Score").GetComponent<ScoreTracker>().totalScore = totalScore;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }

@@ -12,6 +12,7 @@ public class gameMaster : MonoBehaviour
 
     public int wbcCount;
     public int plateletCount;
+    public int levelScore;
     public TextMeshProUGUI wbcCountText;
     public TextMeshProUGUI LivesText;
     public TextMeshProUGUI PlateletCountText;

@@ -27,7 +27,7 @@ public class wbcBullet : MonoBehaviour
             enemy.TakeDamage(1);
         }
 
-        if (collision.tag != "Projectile")
+        if (collision.tag != "Projectile" && collision.tag != "ScorePickup" && collision.tag != "Platelet" && collision.tag != "WhiteBloodCell")
         {
             Destroy(gameObject);
         }

@@ -167,7 +167,24 @@ public class CharacterController2D : MonoBehaviour
 
             SoundManagerScript.PlaySound("PickUpWBC");
             Destroy(col.gameObject);
-            gm.countDown += 1f;
+            gm.countDown += 2f;
+            isColliding = true;
+        }
+
+        if (col.CompareTag("ScorePickup"))
+        {
+            if (isColliding)
+            {
+                return;
+            }
+
+            SoundManagerScript.PlaySound("PickUpWBC");
+            Destroy(col.gameObject);
+            GameObject.Find("Score").GetComponent<ScoreTracker>().totalScore += 1;
+            gm.levelScore += 1;
+
+            Debug.Log(GameObject.Find("Score").GetComponent<ScoreTracker>().totalScore);
+            isColliding = true;
         }
     }
 
