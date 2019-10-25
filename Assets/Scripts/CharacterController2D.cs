@@ -152,7 +152,7 @@ public class CharacterController2D : MonoBehaviour
                 return;
             }
 
-            SoundManagerScript.PlaySound("PickUpWBC");
+            SoundManagerScript.PlaySound("PickUpPlatelet");
             Destroy(col.gameObject);
             gm.plateletCount += 1;
             isColliding = true;
@@ -165,7 +165,7 @@ public class CharacterController2D : MonoBehaviour
                 return;
             }
 
-            SoundManagerScript.PlaySound("PickUpWBC");
+            SoundManagerScript.PlaySound("PickUpOxygen");
             Destroy(col.gameObject);
             gm.countDown += 2f;
             isColliding = true;
@@ -178,7 +178,7 @@ public class CharacterController2D : MonoBehaviour
                 return;
             }
 
-            SoundManagerScript.PlaySound("PickUpWBC");
+            SoundManagerScript.PlaySound("PickUpScore");
             Destroy(col.gameObject);
             GameObject.Find("Score").GetComponent<ScoreTracker>().totalScore += 1;
             gm.levelScore += 1;

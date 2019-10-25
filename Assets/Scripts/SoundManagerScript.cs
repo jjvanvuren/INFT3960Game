@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManagerScript : MonoBehaviour
 {
     // Source: https://www.youtube.com/watch?v=8pFlnyfRfRc
-    public static AudioClip baccyHurtSound, eryHurtSound, deathSound, jumpSound, pickUpWBCSound, throwWBCSound, levelChangeSound;
+    public static AudioClip baccyHurtSound, eryHurtSound, deathSound, jumpSound, pickUpWBCSound, throwWBCSound, levelChangeSound, pickUpScoreSound, pickUpPlateletSound, pickUpOxygenSound;
     static AudioSource audioSource;
 
     void Start()
@@ -14,9 +14,12 @@ public class SoundManagerScript : MonoBehaviour
         eryHurtSound = Resources.Load<AudioClip>("EryHurt");
         deathSound = Resources.Load<AudioClip>("Death");
         jumpSound = Resources.Load<AudioClip>("Jump");
-        pickUpWBCSound = Resources.Load<AudioClip>("PickUpWBC");
+        pickUpWBCSound = Resources.Load<AudioClip>("wbc");
         throwWBCSound = Resources.Load<AudioClip>("ThrowWBC");
         levelChangeSound = Resources.Load<AudioClip>("LevelChange");
+        pickUpScoreSound = Resources.Load<AudioClip>("pickUpScore");
+        pickUpPlateletSound = Resources.Load<AudioClip>("platelet");
+        pickUpOxygenSound = Resources.Load<AudioClip>("oxy");
 
         audioSource = GetComponent<AudioSource>();
     }
@@ -51,7 +54,15 @@ public class SoundManagerScript : MonoBehaviour
             case "LevelChange":
                 audioSource.PlayOneShot(levelChangeSound);
                 break;
-
+            case "PickUpScore":
+                audioSource.PlayOneShot(pickUpScoreSound);
+                break;
+            case "PickUpPlatelet":
+                audioSource.PlayOneShot(pickUpPlateletSound);
+                break;
+            case "PickUpOxygen":
+                audioSource.PlayOneShot(pickUpOxygenSound);
+                break;
         }
     }
 }
