@@ -9,6 +9,14 @@ public class SetVolume : MonoBehaviour
 
     public void SetLevel (float sliderValue)
     {
-        mixer.SetFloat("MainVol", sliderValue);
+        float vol = sliderValue;
+
+        // Mute the volume if dB is less than 40
+        if (sliderValue < -40)
+        {
+            vol = -80;
+        }
+
+        mixer.SetFloat("MainVol", vol);
     }
 }
