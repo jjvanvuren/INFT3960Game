@@ -11776,7 +11776,7 @@ PrefabInstance:
     - target: {fileID: 4249410012767652112, guid: 53e51f7c7bec4534a9398700293aa529,
         type: 3}
       propertyPath: sightRange
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e51f7c7bec4534a9398700293aa529, type: 3}
