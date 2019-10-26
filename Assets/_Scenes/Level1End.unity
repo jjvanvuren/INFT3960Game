@@ -557,7 +557,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "Ery has successfully reached the muscle\n\nA new challange awaits. A breach
+  m_text: "Ery has successfully reached the muscle\n\nA new challenge awaits. A breach
     has opened, and more bacteria are flowing through. \n\nTo stop the invasion, Ery
     will need to collect and deliver platelets to help seal it. \n"
   m_isRightToLeft: 0

@@ -799,7 +799,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "Ery has made his way back to the lungs in time and has replenished his
-    oxygen supply. \n\nEager for further adventure Ery continues on, delivering much
+    oxygen supply. \n\nEager for further adventure, Ery continues on delivering much
     needed oxygen throughout the body.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 189bfcb931f162943b1f39c4a8dbbe32, type: 2}
